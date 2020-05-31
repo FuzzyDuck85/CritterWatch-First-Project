@@ -38,31 +38,31 @@ class AnimalLog
       (
         $1, $2, $3
       )
-      WHERE id = $5"
-      values = [@species, @animal_type, @quantity_observed, @id]
-      SqlRunner.rub(sql, values)
-    end
-
-    def delete()
-      sql = "DELETE FROM animals
-      WHERE id = $1"
-      values = [@id]
-      SqlRunner.run(sql, values)
-    end
-
-    def self.all()
-      sql = "SELECT * FROM animals"
-      animals = SqlRunner.run(sql)
-      result = animals.map{|animal|AnimalLog.new(animal)}
-      return result
-    end
-
-    def self.find(id)
-      sql = "SELECT * FROM animals
-      WHERE id = $1"
-      values = [id]
-      animal = SqlRunner.run(sql, values)
-      result = AnimalLog.new(animal.first)
-      return result
-    end
+    WHERE id = $5"
+    values = [@species, @animal_type, @quantity_observed, @id]
+    SqlRunner.rub(sql, values)
   end
+
+  def delete()
+    sql = "DELETE FROM animals
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM animals"
+    animals = SqlRunner.run(sql)
+    result = animals.map{|animal|AnimalLog.new(animal)}
+    return result
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM animals
+    WHERE id = $1"
+    values = [id]
+    animal = SqlRunner.run(sql, values)
+    result = AnimalLog.new(animal.first)
+    return result
+  end
+end
