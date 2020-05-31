@@ -5,7 +5,7 @@ Minitest::Reporters::SpecReporter.new
 
 require_relative("../animal_log")
 
-class TestAnimalLog < MiniTest::test_total
+class TestAnimalLog < MiniTest::Test
 
   def setup
     options = {"id" => 1, "species" => "Robin", "animal_type" => "Bird", "quantity_observed" => 1}

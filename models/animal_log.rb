@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class AnimalLog
 
-  attr_reader :species, :animal_type, :quantity_observed
+  attr_reader :species, :animal_type, :quantity_observed, :id
 
   def initialize(options)
     @id = options['id'].to_i
@@ -28,8 +28,9 @@ class AnimalLog
     @id = animal_data.first()['id'].to_i
   end
 
-  def = "UPDATE animals
-    SERIAL
+  def update()
+    sql = "UPDATE animals
+    SET
     (
       species,
       animal_type,
