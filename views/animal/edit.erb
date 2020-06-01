@@ -1,0 +1,48 @@
+<form method="post" action="/animal/<%= @animals.id %>">
+  <label for="species-field">Species:</label>
+  <input
+  type="text"
+  name="species"
+  id="species-field"
+  value="<%= @animals.species %>"
+  />
+
+  <label for="animal-type-selection">Select the animal type:</label>
+  <select name="animal_type" id="animal-type-selection">
+    <option
+    value="Bird"
+    <%= "selected" if @animal.species == "Bird" %>
+    >Bird</option>
+    <option
+    value="Mammal"
+    <%= "selected" if @animal.species == "Mammal" %>
+    >Mammal</option>
+    <option
+    value="Amphibian"
+    <%= "selected" if @animal.species == "Amphibian" %>
+    >Amphibian</option>
+    <option
+    value="Fish"
+    <%= "selected" if @animal.species == "Fish" %>
+    >Fish</option>
+    <option
+    value="Beastie"
+    <%= "selected" if @animal.species == "Beastie" %>
+    >Beastie</option>
+    <option
+    value="Reptile"
+    <%= "selected" if @animal.species == "Reptile" %>
+    >Reptile</option>
+  </select>
+
+
+  <label for="quantity-field">Number of animals observed:</label>
+  <input
+  type="number"
+  name="quantity_observed"
+  id="quantity-field"
+  value="<%= @animal.quantity_observed() %>"
+  />
+
+  <input type='submit' value="Edit Animal">
+</form>

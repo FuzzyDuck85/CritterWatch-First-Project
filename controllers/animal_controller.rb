@@ -6,7 +6,7 @@ require_relative('./models/animal')
 also_reload('./models/*')
 
 get '/animal' do
-  @animals = Animal.all()
+  @animal = Animal.all()
   erb (:index)
 end
 
@@ -15,18 +15,18 @@ get '/animal/new' do
 end
 
 get '/animal/:id' do
-  @animals = Animal.find( params[:id])
+  @animal = Animal.find( params[:id])
   erb(:show)
 end
 
 post '/animal' do
-  @animals = Animal.new(params)
-  @animals.save()
+  @animal = Animal.new(params)
+  @animal.save()
   erb(:create)
 end
 
 get '/animal/:id/edit' do
-  @animals = Animal.find(params[:id])
+  @animal = Animal.find(params[:id])
   erb (:edit)
 end
 
