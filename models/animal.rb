@@ -1,6 +1,6 @@
 require_relative('../db/sql_runner')
 
-class AnimalLog
+class Animal
 
   attr_reader :species, :animal_type, :quantity_observed, :id
 
@@ -39,7 +39,7 @@ class AnimalLog
       (
         $1, $2, $3
       )
-    WHERE id = $5"
+    WHERE id = $4"
     values = [@species, @animal_type, @quantity_observed, @id]
     SqlRunner.rub(sql, values)
   end
@@ -54,7 +54,7 @@ class AnimalLog
   def self.all()
     sql = "SELECT * FROM animals"
     animals = SqlRunner.run(sql)
-    result = animals.map{|animal|AnimalLog.new(animal)}
+    result = animals.map{|animal|Animal.new(animal)}
     return result
   end
 
@@ -63,7 +63,7 @@ class AnimalLog
     WHERE id = $1"
     values = [id]
     animal = SqlRunner.run(sql, values)
-    result = AnimalLog.new(animal.first)
+    result = Animal.new(animal.first)
     return result
   end
 end

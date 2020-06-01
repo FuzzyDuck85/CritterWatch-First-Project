@@ -1,21 +1,28 @@
 DROP TABLE user_details;
 DROP TABLE animals;
 DROP TABLE habitat;
+DROP TABLE observation;
 
 CREATE TABLE user_details (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
+    name VARCHAR(255) not null,
     age INT
 )
 CREATE TABLE animals (
     id SERIAL PRIMARY KEY,
-    species VARCHAR(255),
-    animal_type VARCHAR(255),
+    species VARCHAR(255) not null,
+    animal_type VARCHAR(255) not null,
     quantity_observed INT
 )
 CREATE TABLE habitat (
     id SERIAL PRIMARY KEY,
-    location VARCHAR(255),
-    season VARCHAR(255),
-    time_of_day VARCHAR(255)
+    location VARCHAR(255) not null,
+    season VARCHAR(255),not null
+    time_of_day VARCHAR(255) not null
+)
+CREATE TABLE observation (
+    id SERIAL PRIMARY KEY,
+    user_details_id INT REFERENCES user_details(id),
+    animals_id INT REFERENCES user_details(id),
+    habitat_id INT REFERENCES user_details(id)
 );
