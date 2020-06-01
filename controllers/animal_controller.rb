@@ -1,43 +1,40 @@
 require('sinatra')
 require('sinatra/contrib/all')
-require('pry-byebug')
 require_relative('../models/animal.rb')
-require_relative('../models/habitat.rb')
-require_relative('../models/user.rb')
 also_reload('../models/*')
 
 get '/animal' do
   @animal = Animal.all()
-  erb (:index)
+  erb (:"animal/index")
 end
 
 get '/animal/new' do
-  erb (:new)
+  erb (:"animal/new")
 end
 
 get '/animal/:id' do
   @animal = Animal.find( params[:id])
-  erb(:show)
+  erb(:"animal/show")
 end
 
 post '/animal' do
   @animal = Animal.new(params)
   @animal.save()
-  erb(:create)
+  erb(:"animal/create")
 end
 
 get '/animal/:id/edit' do
   @animal = Animal.find(params[:id])
-  erb (:edit)
+  erb (:"animal/edit")
 end
 
 post '/animal/:id' do
   Animal.new(params).update
-  redirect to '/animal'
+  redirect to ("/animal")
 end
 
 post '/animal/:id/delete' do
   animal = Animal.find(params[:id])
   animal.delete()
-  redirect to '/animal'
+  redirect to ("/animal")
 end

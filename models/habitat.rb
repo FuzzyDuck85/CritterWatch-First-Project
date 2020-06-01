@@ -53,8 +53,8 @@ class Habitat
 
   def self.all()
     sql = "SELECT * FROM habitat"
-    habitation = SqlRunner.run(sql)
-    result = habitation.map{|habitat|Habitat.new(habitat)}
+    habitat = SqlRunner.run(sql)
+    result = habitat.map{|habitat|Habitat.new(habitat)}
     return result
   end
 
