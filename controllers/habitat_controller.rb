@@ -1,9 +1,8 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require('pry-byebug')
-
-require_relative('./models/habitat')
-also_reload('./models/*')
+require_relative('../models/habitat')
+also_reload('../models/*')
 
 get '/habitat' do
   @habitation = Habitat.all()

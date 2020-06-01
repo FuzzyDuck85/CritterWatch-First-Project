@@ -1,9 +1,10 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require('pry-byebug')
-
-require_relative('./models/animal')
-also_reload('./models/*')
+require_relative('../models/animal.rb')
+require_relative('../models/habitat.rb')
+require_relative('../models/user.rb')
+also_reload('../models/*')
 
 get '/animal' do
   @animal = Animal.all()

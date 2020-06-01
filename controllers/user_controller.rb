@@ -1,9 +1,8 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require('pry-byebug')
-
-require_relative('./models/user')
-also_reload('./models/*')
+require_relative('../models/user')
+also_reload('../models/*')
 
 get '/user-details' do
   @users = User.all()

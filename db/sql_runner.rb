@@ -1,11 +1,12 @@
-require('pg')
+require( 'pg' )
+
 class SqlRunner
 
   def self.run (sql, values = [])
     begin
-      db = PG.connect({dbname: 'critter_watch', host:'localhost'})
+      db = PG.connect({dbname: 'Critter_Watch', host:'localhost'})
       db.prepare("query", sql)
-      result = db.exex_prepared("query", values)
+      result = db.exec_prepared("query", values)
     ensure
       db.close() if db != nil
     end

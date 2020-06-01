@@ -1,8 +1,7 @@
-require_relative('../models/animal')
-require_relative('../models/user')
-require_relative('../models/habitat')
+require_relative('../models/animal.rb')
+require_relative('../models/user.rb')
+require_relative('../models/habitat.rb')
 # require_relative('../models/observation')
-
 require('pry-byebug')
 
 animal1 = Animal.new({

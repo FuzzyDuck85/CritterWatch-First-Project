@@ -2,6 +2,6 @@
 <p>Animal Type: <%= @animal.animal_type %></p>
 <p>Quantity Observed: <%= @animal.quantity_observed %></p>
 <p><a href="/animal/<%= @animal.id %>/edit">Edit Observation</a></p>
-<form method="post" action="/animal/<%= @animal.id %>/delete">
+<form method="post" action="/animal<%= @animal.id %>/delete">
   <input type="submit" value="Delete Observation"/>
 </form>

@@ -1,6 +1,6 @@
 <% @habitatation.each do |habitat| %>
   <p>Location: <%= habitat.location() %></p>
   <p>Season: <%= habitat.season %> in the <%= habitat.time_of_day %></p>
-  <p><a href="/habitat/<%= habitat.id %>">Show Animals Habitat</a></p>
+  <p><a href="/habitat<%= habitat.id %>">Show Animals Habitat</a></p>
   <hr />
 <% end %>

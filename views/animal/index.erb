@@ -1,6 +1,6 @@
 <% @animal.each do |animal| %>
   <p>Species: <%= animal.species() %></p>
   <p>Type of Animal: <%= animal.quantity_observed %> x <%= animal.animal_type %></p>
-  <p><a href="/animal/<%= animal.id %>">Show Observed Animals</a></p>
+  <p><a href="/animal<%= animal.id %>">Show Observed Animals</a></p>
   <hr />
 <% end %>
