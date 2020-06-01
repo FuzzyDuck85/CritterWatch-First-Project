@@ -1,39 +1,95 @@
-<form method="post" action="/pizza-orders/<%= @order.id %>">
-  <label for="first-name-field">First Name:</label>
-  <input
-  type="text"
-  name="first_name"
-  id="first-name-field"
-  value="<%= @order.first_name %>"
-  />
+<form method="post" action="/habitat/<%= @habitat.id %>">
 
-  <label for="last-name-field">Last Name:</label>
-  <input
-  type="text"
-  name="last_name"
-  id="last-name-field"
-  value="<%= @order.last_name %>"
-  />
-
-  <label for="pizza-selection">Select a pizza:</label>
-  <select name="topping" id="pizza-selection">
+  <label for="location-selection">Where did you see the animal?:</label>
+  <select name="location" id="location-selection">
     <option
-    value="Margherita"
-    <%= "selected" if @order.topping == "Margherita" %>
-    >Margherita</option>
+    value="Garden"
+    <%= "selected" if @habitat.location == "Garden" %>
+    >Garden</option>
     <option
-    value="Calzone"
-    <%= "selected" if @order.topping == "Calzone" %>
-    >Calzone</option>
+    value="Countryside"
+    <%= "selected" if @habitat.location == "Countryside" %>
+    >Countryside</option>
+    <option
+    value="Park"
+    <%= "selected" if @habitat.location == "Park" %>
+    >Park</option>
+    <option
+    value="Riverside"
+    <%= "selected" if @habitat.location == "Riverside" %>
+    >Riverside</option>
+    <option
+    value="Forest"
+    <%= "selected" if @habitat.location == "Forest" %>
+    >Forest</option>
+    <option
+    value="Seaside"
+    <%= "selected" if @habitat.location == "Seaside" %>
+    >Seaside</option>
+    <option
+    value="Loch"
+    <%= "selected" if @habitat.location == "Loch" %>
+    >Loch</option>
+    <option
+    value="Pond"
+    <%= "selected" if @habitat.location == "Pond" %>
+    >Pond</option><option
+    value="Moors"
+    <%= "selected" if @habitat.location == "Moors" %>
+    >Moors</option>
+    <option
+    value="Mountains"
+    <%= "selected" if @habitat.location == "Mountains" %>
+    >Mountains</option>
   </select>
 
-  <label for="quantity-field">Quantity:</label>
-  <input
-  type="number"
-  name="quantity"
-  id="quantity-field"
-  value="<%= @order.quantity() %>"
-  />
+  <label for="season-selection">What is the season?:</label>
+  <select name="season" id="season-selection">
+    <option
+    value="Spring"
+    <%= "selected" if @habitat.season == "Spring" %>
+    >Spring</option>
+    <option
+    value="Summer"
+    <%= "selected" if @habitat.season == "Summer" %>
+    >Summer</option>
+    <option
+    value="Autumn"
+    <%= "selected" if @habitat.season == "Autumn" %>
+    >Autumn</option>
+    <option
+    value="Winter"
+    <%= "selected" if @habitat.season == "Winter" %>
+    >Winter</option>
+  </select>
 
-  <input type='submit' value="Edit Order">
+  <label for="time-selection">What time did you see the animal?:</label>
+  <select name="time_of_day" id="time-selection">
+    <option
+    value="Dawn"
+    <%= "selected" if @habitat.time_of_day == "Dawn" %>
+    >Dawn</option>
+    <option
+    value="Morning"
+    <%= "selected" if @habitat.time_of_day == "Morning" %>
+    > Morning</option>
+    <option
+    value="Afternoon"
+    <%= "selected" if @habitat.time_of_day</time> == "Afternoon" %>
+    >Afternoon</option>
+    <option
+    value="Evening"
+    <%= "selected" if @habitat.time_of_day == "Evening" %>
+    >Evening</option>
+    <option
+    value="Dusk"
+    <%= "selected" if @habitat.time_of_day == "Dusk" %>
+    >Dusk</option>
+    <option
+    value="Night"
+    <%= "selected" if @habitat.time_of_day == "Night" %>
+    >Night</option>
+  </select>
+
+  <input type='submit' value="Edit Habitat">
 </form>

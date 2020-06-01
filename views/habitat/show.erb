@@ -1,8 +1,7 @@
-<p>First Name: <%= @order.first_name %></p>
-<p>Last Name: <%= @order.last_name %></p>
-<p>Topping: <%= @order.topping %></p>
-<p>Quantity: <%= @order.quantity %></p>
-<p><a href="/pizza-orders/<%= @order.id %>/edit">Edit Order</a></p>
-<form method="post" action="/pizza-orders/<%= @order.id %>/delete">
-  <input type="submit" value="Delete Order"/>
+<p>Location: <%= @habitat.location %></p>
+<p>Season: <%= @habitat.season %></p>
+<p>Time of Day: <%= @habitat.time_of_day %></p>
+<p><a href="/habitat/<%= @habitat.id %>/edit">Edit Habitat</a></p>
+<form method="post" action="/pizza-orders/<%= @habitat.id %>/delete">
+  <input type="submit" value="Delete Habitat"/>
 </form>
