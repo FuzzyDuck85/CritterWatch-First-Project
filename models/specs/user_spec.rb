@@ -10,7 +10,7 @@ class TestUser < MiniTest::Test
   def setup
     options = {"id" => 2, "name" => "Rose", "age" => 6}
 
-    @animal = User.new(options)
+    @user = User.new(options)
   end
 
   def test_name

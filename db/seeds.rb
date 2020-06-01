@@ -63,3 +63,41 @@ user2.save
 user3.save
 user4.save
 user5.save
+
+habitat1 = Habitat.new({
+  "location" => "Park",
+  "season" => "Summer",
+  "time_of_day" => "Afternoon"
+})
+habitat2 = Habitat.new({
+  "location" => "Countryside",
+  "season" => "Autumn",
+  "time_of_day" => "Evening"
+})
+habitat3 = Habitat.new({
+  "location" => "Garden",
+  "season" => "Spring",
+  "time_of_day" => "Morning"
+})
+habitat4 = Habitat.new({
+  "location" => "Riverside",
+  "season" => "Winter",
+  "time_of_day" => "Dawn"
+})
+habitat5 = Habitat.new({
+  "location" => "Forest",
+  "season" => "Summer",
+  "time_of_day" => "Night"
+})
+habitat6 = Habitat.new({
+  "location" => "Seaside",
+  "season" => "Spring",
+  "time_of_day" => "Afternoon"
+})
+
+habitat1.save
+habitat2.save
+habitat3.save
+habitat4.save
+habitat5.save
+habitat6.save

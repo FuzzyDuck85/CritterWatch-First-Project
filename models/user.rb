@@ -59,7 +59,7 @@ class User
     sql = "SELECT * FROM user_details
     WHERE id = $1"
     values = [id]
-    animal = SqlRunner.run(sql, values)
+    user = SqlRunner.run(sql, values)
     result = User.new(user.first)
     return result
   end
