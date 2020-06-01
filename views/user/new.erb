@@ -1,30 +1,17 @@
-<form method="post" action="/pizza-orders">
-  <label for="first-name-field">First Name:</label>
+<form method="post" action="/user">
+  <label for="name-field">Name:</label>
   <input
   type="text"
-  name="first_name"
-  id="first-name-field"
+  name="ame"
+  id="name-field"
   />
 
-  <label for="last-name-field">Last Name:</label>
-  <input
-  type="text"
-  name="last_name"
-  id="last-name-field"
-  />
-
-  <label for="pizza-selection">Select a pizza:</label>
-  <select name="topping" id="pizza-selection">
-    <option value="Margherita">Margherita</option>
-    <option value="Calzone">Calzone</option>
-  </select>
-
-  <label for="quantity-field">Quantity:</label>
+  <label for="age-field">Age:</label>
   <input
   type="number"
-  name="quantity"
-  id="quantity-field"
+  name="age"
+  id="age-field"
   />
 
-  <input type="submit" value="Order Pizza">
+  <input type="submit" value="Add User Information">
 </form>
