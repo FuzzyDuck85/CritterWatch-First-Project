@@ -22,7 +22,7 @@ class TestHabitat < MiniTest::Test
     assert_equal("Spring", result)
   end
 
-  def test_season()
+  def test_time_of_day()
     result = @habitat.time_of_day()
     assert_equal("Morning", result)
   end
