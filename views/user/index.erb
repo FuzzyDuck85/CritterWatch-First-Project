@@ -1,8 +1,9 @@
 <h1> Contributors </h1>
 
+<p><a href="/user/new">Add New Contributor</a></p>
+
 <% @users.each do |user| %>
   <p>Name: <%= user.name() %></p>
-  <p>Age: <%= user.age %></p>
-  <p><a href="/user/<%= user.id %>">Show Users</a></p>
+  <p><a href="/user/<%= user.id %>">Expand User Info</a></p>
   <hr />
 <% end %>

@@ -14,18 +14,18 @@ get '/user/new' do
 end
 
 get '/user/:id' do
-  @users = User.find( params[:id])
+  @user = User.find( params[:id])
   erb(:"user/show")
 end
 
-post '/user' do
-  @users = User.new(params)
-  @users.save()
+post '/user/new' do
+  @user = User.new(params)
+  @user.save()
   erb(:"user/create")
 end
 
 get '/user/:id/edit' do
-  @users = User.find(params[:id])
+  @user = User.find(params[:id])
   erb (:"user/edit")
 end
 

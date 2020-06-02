@@ -1,9 +1,10 @@
-<h1>Animals</h1>
+<h1>Animal Observations</h1>
+
+<p><a href="/animal/new">Submit New Animal</a></p>
 
 <% @animal.each do |animal| %>
   <p>Species: <%= animal.species() %></p>
-  <p>Type of Animal: <%= animal.quantity_observed %></p>
-  <p>Amount of Animals observed: <%= animal.animal_type %></p>
-  <p><a href="/animal/<%= animal.id %>">Show Observed Animals</a></p>
+  <p>Contributor: <%=animal.user.name %></p>
+  <p><a href="/animal/<%= animal.id %>">Observation Details</a></p>
   <hr />
 <% end %>

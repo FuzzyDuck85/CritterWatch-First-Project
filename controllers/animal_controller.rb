@@ -3,15 +3,9 @@ require('sinatra/contrib/all')
 require_relative('../models/animal.rb')
 also_reload('../models/*')
 
+
+
 get '/animal' do
-  erb (:"animal/options")
-end
-
-get '/habitat' do
-  erb (:"animal/options")
-end
-
-get '/animal/index' do
   @animal = Animal.all()
   erb (:"animal/index")
 end
@@ -33,6 +27,7 @@ post '/animal/new' do
 end
 
 get '/animal/:id/edit' do
+  @users= User.all()
   @animal = Animal.find(params[:id])
   erb (:"animal/edit")
 end
