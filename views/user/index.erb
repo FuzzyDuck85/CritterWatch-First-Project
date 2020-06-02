@@ -1,9 +1,17 @@
 <h1> Contributors </h1>
+<p><a href="/user/new">Submit New Contributor</a></p>
 
-<p><a href="/user/new">Add New Contributor</a></p>
-
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Age</th>
+  </tr>
 <% @users.each do |user| %>
-  <p>Name: <%= user.name() %></p>
-  <p><a href="/user/<%= user.id %>">Expand User Info</a></p>
-  <hr />
+<tr>
+  <td><a href="/user/<%= user.id%>"><%= user.name() %></a></td>
+  <td>|</td>
+  <td><%= user.age%></td>
+  <tr/>
 <% end %>
+</table>

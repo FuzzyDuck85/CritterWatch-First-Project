@@ -1,19 +1,10 @@
-<h2>Edit User</h2>
+<div class="form-style">
+<div class="form-style-heading">Edit Contributor Details</div>
 <form method="post" action="/user/<%= @user.id %>">
-  <label for="name-field">Name:</label>
-  <input
-  type="text"
-  name="name"
-  id="name-field"
-  value="<%= @user.name %>"
-  />
+  <label for="name-field"></label><span>Name<span class="required">*</span></span><input type="text" class="input-field" name="name" id="name-field" value="<%= @user.name %>" /></label>
 
-  <label for=age-field">Age:</label>
-  <input
-  type="number"
-  name="age"
-  id="age-field"
-  value="<%= @user.age %>"
-  />
-  <input type='submit' value="Edit User">
+  <label for=age-field"></label><span>Age<span class="required">*</span></span><input type="text" class="input-field" name="age" id="age-field" value="<%= @user.age %>" /></label>
+
+  <label><span></span><input type='submit' value="Update"/></label>
 </form>
+</div>

@@ -2,9 +2,17 @@
 
 <p><a href="/animal/new">Submit New Animal</a></p>
 
+<table>
+  <tr>
+    <th>Species</th>
+    <th></th>
+    <th>Contributor</th>
+  </tr>
 <% @animal.each do |animal| %>
-  <p>Species: <%= animal.species() %></p>
-  <p>Contributor: <%=animal.user.name %></p>
-  <p><a href="/animal/<%= animal.id %>">Observation Details</a></p>
-  <hr />
+<tr>
+  <td><a href="/animal/<%= animal.id%>"><%= animal.species() %></a></td>
+  <td>|</td>
+  <td><%= animal.user.name%></td>
+  <tr/>
 <% end %>
+</table>

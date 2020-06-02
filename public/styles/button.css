@@ -2,25 +2,25 @@
   border:0px none;
   border-radius: 3%;
   padding: 8px 12px;
-  color: yellow;
+  color: pink;
   cursor:pointer;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Architects Daughter', cursive;
 }
 
 .btn--danger {
-  background-color: darkred;
+  background-color: pink;
 }
 
 .btn--danger:hover {
-  background-color: #730000;
+  background-color: #73AA00;
 }
 
 .btn--action:hover {
-  background-color: #495C27;
+  background-color: #495CAA;
 }
 
 .btn--action {
-  background-color: darkolivegreen;
+  background-color: purple;
 }
 
 .btn--wrapper {

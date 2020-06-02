@@ -1,19 +1,8 @@
-<h2>Add new Contributor</h2>
-
-<form method="post" action="/user/new">
-  <label for="name-field">Name:</label>
-  <input
-  type="text"
-  name="name"
-  id="name-field"
-  />
-
-  <label for="age-field">Age:</label>
-  <input
-  type="number"
-  name="age"
-  id="age-field"
-  />
-
-  <input type="submit" value="Add Contributor Information">
+<div class="form-style">
+<div class="form-style-heading">Add New Contributor</div>
+<form action="/user/new" method="post">
+<label for="name-field"><span>Name<span class="required">*</span></span><input type="text" class="input-field" name="name" id="name-field" value="" /></label>
+<label for="age-field"><span>Age<span class="required">*</span></span><input type="text" class="input-field" name="age" id="age-field" value="" /></label>
+<label><span> </span><input type="submit" value="Sumbit Contributor Details" /></label>
 </form>
+</div>

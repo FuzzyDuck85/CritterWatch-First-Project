@@ -1,38 +1,42 @@
 body {
-  background: white url('/images/main_background.jpg');
+  background: darkgreen url('/images/mammal_background.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
-  color: blue;
-  font-family: 'Merriweather', serif;
+  color: white;
+  background-color: black;
+  opacity: 0.75;
+  font-family: 'Architects Daughter', serif;
   padding: 0px;
-  margin: 0px;
+  margin: 0pxa
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Special Elite', cursive;
+  font-family: 'Architects Daughter', sans-serif;
   margin: 0px;
   padding: 0px;
 }
 
 h1 {
   font-size: 1.8em;
-  color: darkred;
+  color: white;
   margin-bottom: 20px;
+  padding-right: 300px;
 }
 
 a, a:link, a:visited {
-  color: #a2937e;
+  color: limegreen;
   text-decoration: none;
 }
 
 a:hover, a:active, a:focus {
-  color: #c6e2ff;
+  color: white;
 }
 
 nav {
   padding: 0px;
   margin: 0px;
-  padding-right: 25px;
+  padding-left: 25px;
+
 }
 
 nav ul li {
@@ -55,10 +59,11 @@ main {
 }
 
 .flex--row {
-  flex-direction: row;
+  flex-direction: row-reverse;
 }
 
 #content {
-  border-left: 1px solid darkred;
-  padding-left: 25px;
+  border-right: 1px solid white;
+  padding-right: 25px;
+
 }

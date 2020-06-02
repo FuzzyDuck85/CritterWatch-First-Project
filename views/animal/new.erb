@@ -1,68 +1,54 @@
-<h2>Record Observation</h2>
-
+<div class="form-style">
+<div class="form-style-heading">Record Observation</div>
 <form method="post" action="/animal/new">
-  <label for="name-field">Your Name:</label>
-  <select name="user_id">
+
+<label for="name-field"><span>Your Name</span><select name="user_id" id="name-field" class="select-field">
     <% for user in @users %>
     <option value="<%=user.id%>"><%=user.name%></option>
     <%end%>
-  </select>
+  </select></label>
 
-  <label for="species-field">Species:</label>
-  <input
-  type="text"
-  name="species"
-  id="species-field"
-  />
+  <label for="species-field"><span>Species<span class="required">*</span></span><input type="text" class="input-field" name="species" id="species-field" value="" /></label>
 
-  <label for="animal-type-selection">Select the type of animal:</label>
-  <select name="animal_type" id="animal-type-selection">
-    <option value="Bird">Bird</option>
-    <option value="Mammal">Mammal</option>
-    <option value="Amphibian">Amphibian</option>
-    <option value="Fish">Fish</option>
-    <option value="Beastie">Beastie</option>
-    <option value="Reptile">Reptile</option>
-  </select>
+  <label for="animal-type-selection"><span>Type of Animal</span><select name="animal_type" id="animal-type-selection" class="select-field">
+        <option value="Bird">Bird</option>
+        <option value="Mammal">Mammal</option>
+        <option value="Amphibian">Amphibian</option>
+        <option value="Fish">Fish</option>
+        <option value="Beastie">Beastie</option>
+        <option value="Reptile">Reptile</option>
+      </select></label>
 
-  <label for="quantity-field">Number of animals observed:</label>
-  <input
-  type="number"
-  name="quantity_observed"
-  id="quantity-field"
-  />
+  <label for="quantity-field"><span>Quantity<span class="required">*</span></span><input type="number" class="input-field" name="quantity" id="quantity-field" value="" /></label>
 
-  <label for="habitat-selection">Select the habitat:</label>
-  <select name="habitat" id="habitat-selection">
-    <option value="Garden">Garden</option>
-    <option value="Countryside">Countryside</option>
-    <option value="Park">Park</option>
-    <option value="Riverside">Riverside</option>
-    <option value="Forest">Forest</option>
-    <option value="Seaside">Seaside</option>
-    <option value="Loch">Loch</option>
-    <option value="Pond">Pond</option>
-    <option value="Moors">Moors</option>
-    <option value="Mountains">Mountains</option>
-  </select>
+  <label for="habitat-selection"><span>Habitat</span><select name="habitat" id="habitat-selection" class="select-field">
+        <option value="Garden">Garden</option>
+        <option value="Countryside">Countryside</option>
+        <option value="Park">Park</option>
+        <option value="Riverside">Riverside</option>
+        <option value="Forest">Forest</option>
+        <option value="Seaside">Seaside</option>
+        <option value="Loch">Loch</option>
+        <option value="Pond">Pond</option>
+        <option value="Moors">Moors</option>
+        <option value="Mountains">Mountains</option>
+      </select></label>
 
-  <label for="season-selection">Select the season:</label>
-  <select name="season" id="season-selection">
-    <option value="Spring">Spring</option>
-    <option value="Summer">Summer</option>
-    <option value="Autumn">Autumn</option>
-    <option value="Winter">Winter</option>
-  </select>
+    <label for="season-selection"><span>Season</span><select name="season" id="season-selection" class="select-field">
+        <option value="Spring">Spring</option>
+        <option value="Summer">Summer</option>
+        <option value="Autumn">Autumn</option>
+        <option value="Winter">Winter</option>
+      </select></label>
+      <label for="time-selection"><span>Time</span><select name="time_of_day" id="time-selection" class="select-field">
+        <option value="Dawn">Dawn</option>
+        <option value="Morning">Morning</option>
+        <option value="Afternoon">Afternoon</option>
+        <option value="Evening">Evening</option>
+        <option value="Dusk">Dusk</option>
+        <option value="Night">Night</option>
+      </select></label>
 
-  <label for="time-selection">Select the time you seen the animal:</label>
-  <select name="time_of_day" id="time-selection">
-    <option value="Dawn">Dawn</option>
-    <option value="Morning">Morning</option>
-    <option value="Afternoon">Afternoon</option>
-    <option value="Evening">Evening</option>
-    <option value="Dusk">Dusk</option>
-    <option value="Night">Night</option>
-  </select>
-
-  <input type="submit" value="Record Observation">
+      <label><span></span><input type="submit" value="Record Observation"></label>
 </form>
+</div>

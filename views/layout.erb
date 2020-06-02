@@ -2,33 +2,35 @@
 <html>
 <head>
   <title>CritterWatch</title>
-  <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
 
-  <link rel="icon" href="/images/magnifying.png" />
+  <link rel="icon" href="/images/honeybee.jpg" />
 
-  <link rel="stylesheet" type="text/css" href="/styles/buttons.css">
-  <link rel="stylesheet" type="text/css" href="/styles/forms.css">
-  <link rel="stylesheet" type="text/css" href="/styles/structure.css">
-  <link rel="stylesheet" type="text/css" href="/styles/tables.css">
+
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
+  <link rel="stylesheet" type="text/css" href="/styles/form.css">
+  <link rel="stylesheet" type="text/css" href="/styles/table.css">
+  <link rel="stylesheet" type="text/css" href="/styles/button.css">
+
 </head>
 <body>
-<main class="flex flex--row">
-  <nav>
-    <ul>
-      <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/animal">Animals</a>
-      </li>
-      <li>
-      <a href="/user">Contributors</a>
-      </li>
-    </ul>
-  </nav>
-  <section id="content">
-  <%= yield %>
-  </section>
+  <main class="flex flex--row">
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/animal">Animals</a>
+        </li>
+        <li>
+          <a href="/user">Contributors</a>
+        </li>
+      </ul>
+    </nav>
+    <section id="content">
+      <%= yield %>
+    </section>
   </main>
 </body>
 </html>
