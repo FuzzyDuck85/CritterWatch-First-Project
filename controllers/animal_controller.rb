@@ -7,12 +7,17 @@ get '/animal' do
   erb (:"animal/options")
 end
 
+get '/habitat' do
+  erb (:"animal/options")
+end
+
 get '/animal/index' do
   @animal = Animal.all()
   erb (:"animal/index")
 end
 
 get '/animal/new' do
+  @users= User.all()
   erb (:"animal/new")
 end
 

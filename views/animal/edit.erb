@@ -1,11 +1,11 @@
+<h2>Edit Observation</h2>
 <form method="post" action="/animal/<%= @animals.id %>">
-  <label for="name-field">Name:</label>
-  <input
-  type="text"
-  name="name"
-  id="name-field"
-  value="<%= @user.name %>"
-  />
+  <label for="name-field">Your Name:</label>
+  <select name="user_id">
+    <% for user in @users %>
+    <option value="<%=user.id%>"><%=user.name%></option>
+    <%end%>
+  </select>
 
   <label for=age-field">Age:</label>
   <input
@@ -26,30 +26,12 @@
   <label for="animal-type-selection">Select the animal type:</label>
   <select name="animal_type" id="animal-type-selection">
 
-    <option
-    value="Bird"
-    <%= "selected" if @animal.species == "Bird" %>
-    >Bird</option>
-    <option
-    value="Mammal"
-    <%= "selected" if @animal.species == "Mammal" %>
-    >Mammal</option>
-    <option
-    value="Amphibian"
-    <%= "selected" if @animal.species == "Amphibian" %>
-    >Amphibian</option>
-    <option
-    value="Fish"
-    <%= "selected" if @animal.species == "Fish" %>
-    >Fish</option>
-    <option
-    value="Beastie"
-    <%= "selected" if @animal.species == "Beastie" %>
-    >Beastie</option>
-    <option
-    value="Reptile"
-    <%= "selected" if @animal.species == "Reptile" %>
-    >Reptile</option>
+    <option value="Bird" <%= "selected" if @animal.species == "Bird" %>>Bird</option>
+    <option value="Mammal" <%= "selected" if @animal.species == "Mammal" %>>Mammal</option>
+    <option value="Amphibian" <%= "selected" if @animal.species == "Amphibian" %>>Amphibian</option>
+    <option value="Fish" <%= "selected" if @animal.species == "Fish" %> >Fish</option>
+    <option value="Beastie" <%= "selected" if @animal.species == "Beastie" %>>Beastie</option>
+    <option value="Reptile" <%= "selected" if @animal.species == "Reptile" %>>Reptile</option>
   </select>
 
 
@@ -61,5 +43,37 @@
   value="<%= @animal.quantity_observed() %>"
   />
 
-  <input type='submit' value="Edit Animal">
+  <label for="location-selection">Where did you see the animal?:</label>
+  <select name="location" id="location-selection">
+    <option value="Garden" <%= "selected" if @habitat.location == "Garden" %> >Garden</option>
+    <option value="Countryside" <%= "selected" if @habitat.location == "Countryside" %> >Countryside</option>
+    <option value="Park" <%= "selected" if @habitat.location == "Park" %> >Park</option>
+    <option value="Riverside" <%= "selected" if @habitat.location == "Riverside" %> >Riverside</option>
+    <option value="Forest" <%= "selected" if @habitat.location == "Forest" %> >Forest</option>
+    <option value="Seaside" <%= "selected" if @habitat.location == "Seaside" %> >Seaside</option>
+    <option value="Loch" <%= "selected" if @habitat.location == "Loch" %> >Loch</option>
+    <option value="Pond" <%= "selected" if @habitat.location == "Pond" %> >Pond</option>
+    <option value="Moors" <%= "selected" if @habitat.location == "Moors" %> >Moors</option>
+    <option value="Mountains" <%= "selected" if @habitat.location == "Mountains" %> >Mountains</option>
+  </select>
+
+  <label for="season-selection">What is the season?:</label>
+  <select name="season" id="season-selection">
+    <option value="Spring" <%= "selected" if @habitat.season == "Spring" %>>Spring</option>
+    <option value="Summer" <%= "selected" if @habitat.season == "Summer" %> >Summer</option>
+    <option value="Autumn"<%= "selected" if @habitat.season == "Autumn" %>>Autumn</option>
+    <option value="Winter" <%= "selected" if @habitat.season == "Winter" %> >Winter</option>
+  </select>
+
+  <label for="time-selection">What time did you see the animal?:</label>
+  <select name="time_of_day" id="time-selection">
+    <option value="Dawn" <%= "selected" if @habitat.time_of_day == "Dawn" %>>Dawn</option>
+    <option value="Morning" <%= "selected" if @habitat.time_of_day == "Morning" %>>Morning</option>
+    <option value="Afternoon" <%= "selected" if @habitat.time_of_day == "Afternoon" %>>Afternoon</option>
+    <option value="Evening"<%= "selected" if @habitat.time_of_day == "Evening" %>>Evening</option>
+    <option value="Dusk"<%= "selected" if @habitat.time_of_day == "Dusk" %>>Dusk</option>
+    <option value="Night"<%= "selected" if @habitat.time_of_day == "Night" %>>Night</option>
+  </select>
+
+  <input type='submit' value="Edit Observation">
 </form>

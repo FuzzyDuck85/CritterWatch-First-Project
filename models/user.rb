@@ -38,7 +38,7 @@ class User
       )
     WHERE id = $3"
     values = [@name, @age, @id]
-    SqlRunner.rub(sql, values)
+    SqlRunner.run(sql, values)
   end
 
   def delete()

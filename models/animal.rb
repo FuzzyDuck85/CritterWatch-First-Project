@@ -1,5 +1,5 @@
 require_relative('../db/sql_runner')
-
+require_relative('./user')
 class Animal
 
   attr_accessor :species, :animal_type, :quantity_observed, :habitat, :season, :time_of_day, :user_id
@@ -62,7 +62,7 @@ class Animal
       )
     WHERE id = $8"
     values = [@species, @animal_type, @quantity_observed, @habitat, @season, @time_of_day, @user_id, @id]
-    SqlRunner.rub(sql, values)
+    SqlRunner.run(sql, values)
   end
 
   def delete_all()

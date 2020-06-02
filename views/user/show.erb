@@ -1,7 +1,7 @@
 <p>Name: <%= @user.name %></p>
 <p>Age: <%= @user.age %></p>
 
-<p><a href="/user-details/<%= @user.id %>/edit">Edit User Information</a></p>
-<form method="post" action="/user-details/<%= @user.id %>/delete">
+<p><a href="/user/<%= @user.id %>/edit">Edit User Information</a></p>
+<form method="post" action="/user/<%= @user.id %>/delete">
   <input type="submit" value="Delete User"/>
 </form>
