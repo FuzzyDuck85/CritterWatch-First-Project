@@ -2,13 +2,18 @@ require_relative('../db/sql_runner')
 
 class Animal
 
-  attr_reader :species, :animal_type, :quantity_observed, :id
+  attr_accessor :species, :animal_type, :quantity_observed, :habitat, :season, :time_of_day, :user_id
+  attr_reader :id
 
   def initialize(options)
-    @id = options['id'].to_i
+    @id = options['id'].to_i if options['id']
     @species = options['species']
     @animal_type = options['animal_type']
     @quantity_observed = options['quantity_observed'].to_i
+    @habitat = options['habitat']
+    @season = options['season']
+    @time_of_day = options['time_of_day']
+    @user_id = options['user_id'].to_i
   end
 
   def save()
@@ -16,16 +21,28 @@ class Animal
     (
       species,
       animal_type,
-      quantity_observed
+      quantity_observed,
+      habitat,
+      season,
+      time_of_day,
+      user_id
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2, $3, $4, $5, $6, $7
     )
     RETURNING *"
-    values = [@species, @animal_type, @quantity_observed]
+    values = [@species, @animal_type, @quantity_observed, @habitat, @season, @time_of_day, @user_id]
     animal_data = SqlRunner.run(sql, values)
     @id = animal_data.first()['id'].to_i
+  end
+
+  def user()
+    sql = "SELECT * FROM users
+    WHERE id = $1"
+    values = [@user_id]
+    results = SqlRunner.run(sql, values)
+    return User.new(results.first)
   end
 
   def update()
@@ -34,14 +51,23 @@ class Animal
     (
       species,
       animal_type,
-      quantity_observed
+      quantity_observed,
+      habitat,
+      season,
+      time_of_day,
+      user_id
       ) =
       (
-        $1, $2, $3
+        $1, $2, $3, $4, $5, $6, $7
       )
-    WHERE id = $4"
-    values = [@species, @animal_type, @quantity_observed, @id]
+    WHERE id = $8"
+    values = [@species, @animal_type, @quantity_observed, @habitat, @season, @time_of_day, @user_id, @id]
     SqlRunner.rub(sql, values)
+  end
+
+  def delete_all()
+    sql = "DELETE FROM animals"
+    SqlRunner.run(sql)
   end
 
   def delete()
@@ -66,4 +92,5 @@ class Animal
     result = Animal.new(animal.first)
     return result
   end
+
 end

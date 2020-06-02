@@ -1,5 +1,19 @@
-<form method="post" action="/animal">
-  
+<h2>Record Observation</h2>
+<form method="post" action="/animal/index">
+  <label for="name-field">Your Name:</label>
+  <input
+  type="text"
+  name="ame"
+  id="name-field"
+  />
+
+  <label for="age-field">Age:</label>
+  <input
+  type="number"
+  name="age"
+  id="age-field"
+  />
+
   <label for="species-field">Species:</label>
   <input
   type="text"
@@ -7,7 +21,7 @@
   id="species-field"
   />
 
-  <label for="animal-type-selection">Select the animal type:</label>
+  <label for="animal-type-selection">Select the type of animal:</label>
   <select name="animal_type" id="animal-type-selection">
     <option value="Bird">Bird</option>
     <option value="Mammal">Mammal</option>

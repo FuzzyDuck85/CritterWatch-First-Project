@@ -4,6 +4,10 @@ require_relative('../models/animal.rb')
 also_reload('../models/*')
 
 get '/animal' do
+  erb (:"animal/options")
+end
+
+get '/animal/index' do
   @animal = Animal.all()
   erb (:"animal/index")
 end
@@ -17,7 +21,7 @@ get '/animal/:id' do
   erb(:"animal/show")
 end
 
-post '/animal' do
+post '/animal/new' do
   @animal = Animal.new(params)
   @animal.save()
   erb(:"animal/create")

@@ -11,7 +11,7 @@ class User
   end
 
   def save()
-    sql = "INSERT INTO user_details
+    sql = "INSERT INTO users
     (
       name,
       age
@@ -27,7 +27,7 @@ class User
   end
 
   def update()
-    sql = "UPDATE user_details
+    sql = "UPDATE users
     SET
     (
       name,
@@ -42,21 +42,21 @@ class User
   end
 
   def delete()
-    sql = "DELETE FROM user_details
+    sql = "DELETE FROM users
     WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
 
   def self.all()
-    sql = "SELECT * FROM user_details"
+    sql = "SELECT * FROM users"
     users = SqlRunner.run(sql)
     result = users.map{|user|User.new(user)}
     return result
   end
 
   def self.find(id)
-    sql = "SELECT * FROM user_details
+    sql = "SELECT * FROM users
     WHERE id = $1"
     values = [id]
     user = SqlRunner.run(sql, values)

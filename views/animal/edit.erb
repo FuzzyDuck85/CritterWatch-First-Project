@@ -1,14 +1,31 @@
 <form method="post" action="/animal/<%= @animals.id %>">
-  <label for="species-field">Species:</label>
+  <label for="name-field">Name:</label>
   <input
   type="text"
-  name="species"
-  id="species-field"
-  value="<%= @animals.species %>"
+  name="name"
+  id="name-field"
+  value="<%= @user.name %>"
+  />
+
+  <label for=age-field">Age:</label>
+  <input
+  type="number"
+  name="age"
+  id="age-field"
+  value="<%= @user.age %>"
+  />
+
+  <label for="species-field">Species:</label>
+    <input
+    type="text"
+    name="species"
+    id="species-field"
+    value="<%= @animals.species %>"
   />
 
   <label for="animal-type-selection">Select the animal type:</label>
   <select name="animal_type" id="animal-type-selection">
+
     <option
     value="Bird"
     <%= "selected" if @animal.species == "Bird" %>
