@@ -96,6 +96,7 @@ class Animal
   def common()
     sql = "COUNT * FROM anmials
     WHERE id = $1"
+  end
 
 
 end
