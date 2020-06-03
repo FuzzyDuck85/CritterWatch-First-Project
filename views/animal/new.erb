@@ -2,7 +2,7 @@
 <div class="form-style-heading">Record Observation</div>
 <form method="post" action="/animal/new">
 
-<label for="name-field"><span>Your Name</span><select name="user_id" id="name-field" class="select-field">
+<label for="name-field"><span>Your Name</span><span></span><select name="user_id" id="name-field" class="select-field">
     <% for user in @users %>
     <option value="<%=user.id%>"><%=user.name%></option>
     <%end%>
