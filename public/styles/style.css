@@ -59,7 +59,7 @@ main {
 }
 
 .flex--row {
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 
 #content {

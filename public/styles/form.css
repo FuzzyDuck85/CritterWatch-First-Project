@@ -1,6 +1,6 @@
 <style type="text/css">
 .form-style{
-	max-width: 500px;
+	max-width: 600px;
 	padding: 20px 12px 10px 20px;
 	font: 13px Arial, 'Architects Daughter', sans-serif;
 }
@@ -26,16 +26,10 @@
 .form-style span.required{
 	color:red;
 }
-.form-style .tel-number-field{
-	width: 40px;
-	text-align: center;
-}
-.form-style input.input-field, .form-style-2 .select-field{
+.form-style input.input-field, .form-style .select-field{
 	width: 48%;
 }
 .form-style input.input-field,
-.form-style .tel-number-field,
-.form-style .textarea-field,
  .form-style .select-field{
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -51,20 +45,14 @@
 	outline: none;
 }
 .form-style .input-field:focus,
-.form-style .number-field:focus,
-.form-style .textarea-field:focus,
 .form-style .select-field:focus{
 	border: 1px solid #0C0;
-}
-.form-style .textarea-field{
-	height:100px;
-	width: 50%;
 }
 .form-style input[type=submit],
 .form-style input[type=button]{
 	border: none;
 	padding: 8px 15px 8px 15px;
-	background: #FF8500;
+	background: #08D08F;
 	color: #fff;
 	box-shadow: 1px 1px 4px #DADADA;
 	-moz-box-shadow: 1px 1px 4px #DADADA;
@@ -75,7 +63,7 @@
 }
 .form-style input[type=submit]:hover,
 .form-style input[type=button]:hover{
-	background: #EA7B00;
+	background: #89ED97;
 	color: #fff;
 }
 </style>

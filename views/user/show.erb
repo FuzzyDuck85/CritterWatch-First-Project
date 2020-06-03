@@ -1,7 +1,16 @@
+<h1>Update Contributor Details</h1>
+
 <p>Name: <%= @user.name %></p>
 <p>Age: <%= @user.age %></p>
 
-<p><a href="/user/<%= @user.id %>/edit">Edit User Information</a></p>
-<form method="post" action="/user/<%= @user.id %>/delete">
-  <input type="submit" value="Delete User"/>
+<div class="form-style">
+<form action="/user/<%= @user.id %>/edit">
+  <label><input type="submit" value="Edit Contributor Details"/></label>
 </form>
+</div>
+
+<div class="form-style">
+<form method="post" action="/user/<%= @user.id %>/delete">
+  <label><input type="submit" value="Delete User"/></label>
+</form>
+</div>
